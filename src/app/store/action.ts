@@ -1,4 +1,4 @@
-import { Configuration, Projet } from '../../models/projet.model';
+import { Configuration, Projet } from '../models/projet.model';
 
 export class AddProjet {
 	static readonly type = '[Projet] Add Projet';

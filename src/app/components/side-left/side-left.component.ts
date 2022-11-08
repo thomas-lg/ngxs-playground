@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faker } from '@faker-js/faker';
-import { Select, Store } from '@ngxs/store';
-import { Observable } from 'rxjs';
-import { Projet } from '../models/projet.model';
+import { Store } from '@ngxs/store';
 import {
 	ActiveConfiguration,
 	ActiveProjet,
@@ -12,8 +10,8 @@ import {
 	DeleteProjet,
 	UpdateConfiguration,
 	UpdateProjet,
-} from '../store/projet/projet.action';
-import { ConfigurateurState } from '../store/projet/projet.state';
+} from '../../store/action';
+import { ConfigurateurState } from '../../store/state';
 
 @Component({
 	selector: 'app-side-left',

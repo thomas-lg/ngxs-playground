@@ -18,7 +18,7 @@ import {
 	DeleteProjet,
 	UpdateConfiguration,
 	UpdateProjet,
-} from './projet.action';
+} from './action';
 
 export interface ConfigurateurStateModel {
 	projets: Projet[];
