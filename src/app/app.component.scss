@@ -1,0 +1,11 @@
+.container {
+	display: flex;
+	gap: 20px;
+	padding: 20px;
+	app-side-left {
+		flex: 1;
+	}
+	app-side-right {
+		flex: 1;
+	}
+}

@@ -1,0 +1,27 @@
+<div class="container">
+	<div *ngIf="currentProjet$ | async as currentProjet">
+		<mat-card class="example-card">
+			<mat-card-header>
+				<div mat-card-avatar class="example-header-image"></div>
+				<mat-card-title>{{ currentProjet.name }}</mat-card-title>
+				<mat-card-subtitle>{{ currentProjet.id }}</mat-card-subtitle>
+			</mat-card-header>
+
+			<mat-card-content
+				*ngFor="let configuration of currentProjet.configurations"
+			>
+				<div class="row">
+					<h2 class="label">{{ configuration.name }}</h2>
+				</div>
+				<div class="row">
+					<div class="label">Color</div>
+					<div
+						class="color"
+						style="width: 20px; height: 20px"
+						[style.background-color]="configuration.color"
+					></div>
+				</div>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</div>

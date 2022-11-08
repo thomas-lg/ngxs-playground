@@ -1,0 +1,62 @@
+<div class="container" *ngIf="projets$">
+	<button mat-raised-button color="primary" (click)="createProjet()">
+		Create projet
+	</button>
+	<mat-card class="projets" *ngFor="let projet of projets$ | async">
+		<h2>Projet</h2>
+		<div class="buttons">
+			<button
+				mat-raised-button
+				*ngIf="!projet.active"
+				(click)="makeActive(projet.id)"
+			>
+				Make active
+			</button>
+			<button
+				*ngIf="projet.active"
+				mat-raised-button
+				(click)="updateProjet(projet.id)"
+			>
+				Update projet
+			</button>
+
+			<button mat-raised-button (click)="deleteProjet(projet.id)">
+				Delete projet
+			</button>
+		</div>
+		<h2>Configurations</h2>
+		<div class="buttons">
+			<button
+				mat-raised-button
+				*ngIf="projet.active"
+				(click)="createConfiguration()"
+			>
+				Create configuration
+			</button>
+		</div>
+		<div class="buttons" *ngFor="let configuration of projet.configurations">
+			<h3>{{ configuration.name }}</h3>
+			<button
+				*ngIf="projet.active && !configuration.active"
+				mat-raised-button
+				(click)="makeActiveConf(configuration.id)"
+			>
+				Make active
+			</button>
+			<button
+				mat-raised-button
+				*ngIf="configuration.active"
+				(click)="updateConfiguration()"
+			>
+				Update configuration
+			</button>
+			<button
+				mat-raised-button
+				*ngIf="configuration.active"
+				(click)="deleteConfiguration(configuration.id)"
+			>
+				Delete configuration
+			</button>
+		</div>
+	</mat-card>
+</div>
