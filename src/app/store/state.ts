@@ -37,13 +37,9 @@ export class ConfigurateurState {
 		return state.projets.find((p) => p.active);
 	}
 
-	@Selector()
-	static currentConfiguration(
-		state: ConfigurateurStateModel
-	): Configuration | undefined {
-		return state.projets
-			.find((p) => p.active)
-			?.configurations.find((c) => c.active);
+	@Selector([ConfigurateurState.currentProjet])
+	static currentConfiguration(state: Projet): Configuration | undefined {
+		return state.configurations.find((c) => c.active);
 	}
 
 	@Selector()
